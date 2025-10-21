@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ata Center & Ata Deluxe - İnşaat Projeleri</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Ana Hero Section -->
+    <section class="hero-section" id="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="company-info">
+                <h1 class="main-title">MAU İnşaat & ERBA İnşaat</h1>
+                <p class="subtitle">Emlak Gayrimenkul Satış Ofisi</p>
+            </div>
+            
+            <div class="project-buttons">
+                <button class="project-btn" data-project="ata-center">
+                    <span class="btn-text">Ata Center</span>
+                </button>
+                <button class="project-btn" data-project="ata-deluxe">
+                    <span class="btn-text">Ata Deluxe</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ata Center Proje Detayları -->
+    <section class="project-details" id="ata-center-details">
+        <div class="container">
+            <div class="project-header">
+                <button class="back-to-selection-btn" onclick="backToSelection('ata-center')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Geri</span>
+                </button>
+                <h2 class="project-title">Ata Center</h2>
+            </div>
+            
+            <div class="project-content">
+                <!-- Daire Seçenekleri -->
+                <div class="apartment-selection" id="ata-center-selection">
+                    <div class="apartment-choices">
+                        <button class="apartment-choice-btn" onclick="selectApartment('ata-center', '2+1')">
+                            <span class="choice-text">2+1 Daireler</span>
+                        </button>
+                        <button class="apartment-choice-btn" onclick="selectApartment('ata-center', '3+1')">
+                            <span class="choice-text">3+1 Daireler</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Ata Center 2+1 Daire İçeriği -->
+                <div class="dynamic-content" id="ata-center-2+1-content" style="display: none;">
+                    
+                    <div class="content-row">
+                        <div class="carousel-container">
+                            <div class="carousel-header">
+                                <h3>3D Modeller & Sanal Tur</h3>
+                                <div class="carousel-nav">
+                                    <button class="carousel-btn prev-btn" onclick="changeSlide('ata-center-2+1', -1)">‹</button>
+                                    <button class="carousel-btn next-btn" onclick="changeSlide('ata-center-2+1', 1)">›</button>
+                                </div>
+                            </div>
+                    
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track" id="ata-center-2+1-carousel">
+                                    <div class="carousel-slide active">
+                                        <div class="model-container">
+                                            <h4>Bina Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Center 2+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/apartment-floor-plan-2e85bf66e2dd4d48b683d6843e040a2b"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>Daire İçi Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Center 2+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/full-gameready-city-buildings-0545317292c44490af5408cb58633121"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>360° Sanal Tur</h4>
+                                            <div class="matterport-embed-wrapper">
+                                                <iframe title="Ata Center 2+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://discover.matterport.com/space/mj12pMLKrTB"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide('ata-center-2+1', 1)"></span>
+                                <span class="dot" onclick="currentSlide('ata-center-2+1', 2)"></span>
+                                <span class="dot" onclick="currentSlide('ata-center-2+1', 3)"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="info-card">
+                                <h3>Ata Center 2+1 Daire</h3>
+                                <ul>
+                                    <li><strong>Konum:</strong> İstanbul, Türkiye</li>
+                                    <li><strong>Net Alan:</strong> 85 m²</li>
+                                    <li><strong>Brüt Alan:</strong> 95 m²</li>
+                                    <li><strong>Oda Sayısı:</strong> 2 Yatak Odası + 1 Salon</li>
+                                    <li><strong>Özellikler:</strong> Modern açık mutfak, balkon imkanı, klima sistemi, parke zemin, banyo fayansları</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ata Center 3+1 Daire İçeriği -->
+                <div class="dynamic-content" id="ata-center-3+1-content" style="display: none;">
+                    
+                    <div class="content-row">
+                        <div class="carousel-container">
+                            <div class="carousel-header">
+                                <h3>3D Modeller & Sanal Tur</h3>
+                                <div class="carousel-nav">
+                                    <button class="carousel-btn prev-btn" onclick="changeSlide('ata-center-3+1', -1)">‹</button>
+                                    <button class="carousel-btn next-btn" onclick="changeSlide('ata-center-3+1', 1)">›</button>
+                                </div>
+                            </div>
+                    
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track" id="ata-center-3+1-carousel">
+                                    <div class="carousel-slide active">
+                                        <div class="model-container">
+                                            <h4>Bina Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Center 3+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/apartment-floor-plan-2e85bf66e2dd4d48b683d6843e040a2b"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>Daire İçi Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Center 3+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/full-gameready-city-buildings-0545317292c44490af5408cb58633121"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>360° Sanal Tur</h4>
+                                            <div class="matterport-embed-wrapper">
+                                                <iframe title="Ata Center 3+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://discover.matterport.com/space/mj12pMLKrTB"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide('ata-center-3+1', 1)"></span>
+                                <span class="dot" onclick="currentSlide('ata-center-3+1', 2)"></span>
+                                <span class="dot" onclick="currentSlide('ata-center-3+1', 3)"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="info-card">
+                                <h3>Ata Center 3+1 Daire</h3>
+                                <ul>
+                                    <li><strong>Konum:</strong> İstanbul, Türkiye</li>
+                                    <li><strong>Net Alan:</strong> 120 m²</li>
+                                    <li><strong>Brüt Alan:</strong> 135 m²</li>
+                                    <li><strong>Oda Sayısı:</strong> 3 Yatak Odası + 1 Salon</li>
+                                    <li><strong>Özellikler:</strong> Geniş salon alanı, büyük balkon, klima sistemi, parke zemin, lüks banyo tasarımı</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ata Deluxe Proje Detayları -->
+    <section class="project-details" id="ata-deluxe-details">
+        <div class="container">
+            <div class="project-header">
+                <button class="back-to-selection-btn" onclick="backToSelection('ata-deluxe')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Geri</span>
+                </button>
+                <h2 class="project-title">Ata Deluxe</h2>
+            </div>
+            
+            <div class="project-content">
+                <!-- Daire Seçenekleri -->
+                <div class="apartment-selection" id="ata-deluxe-selection">
+                    <div class="apartment-choices">
+                        <button class="apartment-choice-btn" onclick="selectApartment('ata-deluxe', '2+1')">
+                            <span class="choice-text">2+1 Daireler</span>
+                        </button>
+                        <button class="apartment-choice-btn" onclick="selectApartment('ata-deluxe', '3+1')">
+                            <span class="choice-text">3+1 Daireler</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Ata Deluxe 2+1 Daire İçeriği -->
+                <div class="dynamic-content" id="ata-deluxe-2+1-content" style="display: none;">
+                    
+                    <div class="content-row">
+                        <div class="carousel-container">
+                            <div class="carousel-header">
+                                <h3>3D Modeller & Sanal Tur</h3>
+                                <div class="carousel-nav">
+                                    <button class="carousel-btn prev-btn" onclick="changeSlide('ata-deluxe-2+1', -1)">‹</button>
+                                    <button class="carousel-btn next-btn" onclick="changeSlide('ata-deluxe-2+1', 1)">›</button>
+                                </div>
+                            </div>
+                    
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track" id="ata-deluxe-2+1-carousel">
+                                    <div class="carousel-slide active">
+                                        <div class="model-container">
+                                            <h4>Bina Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Deluxe 2+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/apartment-floor-plan-28f11384b2d6437381dc740dfe847c76"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>Daire İçi Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Deluxe 2+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/low-poly-city-buildings-e0209ac5bb684d2d85e5ade96c92d2ff"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>360° Sanal Tur</h4>
+                                            <div class="matterport-embed-wrapper">
+                                                <iframe title="Ata Deluxe 2+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://discover.matterport.com/space/mj12pMLKrTB"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide('ata-deluxe-2+1', 1)"></span>
+                                <span class="dot" onclick="currentSlide('ata-deluxe-2+1', 2)"></span>
+                                <span class="dot" onclick="currentSlide('ata-deluxe-2+1', 3)"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="info-card">
+                                <h3>Ata Deluxe 2+1 Daire</h3>
+                                <ul>
+                                    <li><strong>Konum:</strong> İstanbul, Türkiye</li>
+                                    <li><strong>Net Alan:</strong> 95 m²</li>
+                                    <li><strong>Brüt Alan:</strong> 110 m²</li>
+                                    <li><strong>Oda Sayısı:</strong> 2 Yatak Odası + 1 Salon</li>
+                                    <li><strong>Özellikler:</strong> Premium açık mutfak, geniş balkon, merkezi klima sistemi, mermer zemin, lüks banyo tasarımı</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ata Deluxe 3+1 Daire İçeriği -->
+                <div class="dynamic-content" id="ata-deluxe-3+1-content" style="display: none;">
+                    
+                    <div class="content-row">
+                        <div class="carousel-container">
+                            <div class="carousel-header">
+                                <h3>3D Modeller & Sanal Tur</h3>
+                                <div class="carousel-nav">
+                                    <button class="carousel-btn prev-btn" onclick="changeSlide('ata-deluxe-3+1', -1)">‹</button>
+                                    <button class="carousel-btn next-btn" onclick="changeSlide('ata-deluxe-3+1', 1)">›</button>
+                                </div>
+                            </div>
+                    
+                            <div class="carousel-wrapper">
+                                <div class="carousel-track" id="ata-deluxe-3+1-carousel">
+                                    <div class="carousel-slide active">
+                                        <div class="model-container">
+                                            <h4>Bina Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Deluxe 3+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/apartment-floor-plan-28f11384b2d6437381dc740dfe847c76"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>Daire İçi Görünümü</h4>
+                                            <div class="sketchfab-embed-wrapper">
+                                                <iframe title="Ata Deluxe 3+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/3d-models/low-poly-city-buildings-e0209ac5bb684d2d85e5ade96c92d2ff"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-slide">
+                                        <div class="model-container">
+                                            <h4>360° Sanal Tur</h4>
+                                            <div class="matterport-embed-wrapper">
+                                                <iframe title="Ata Deluxe 3+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://discover.matterport.com/space/mj12pMLKrTB"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSlide('ata-deluxe-3+1', 1)"></span>
+                                <span class="dot" onclick="currentSlide('ata-deluxe-3+1', 2)"></span>
+                                <span class="dot" onclick="currentSlide('ata-deluxe-3+1', 3)"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="project-info">
+                            <div class="info-card">
+                                <h3>Ata Deluxe 3+1 Daire</h3>
+                                <ul>
+                                    <li><strong>Konum:</strong> İstanbul, Türkiye</li>
+                                    <li><strong>Net Alan:</strong> 140 m²</li>
+                                    <li><strong>Brüt Alan:</strong> 160 m²</li>
+                                    <li><strong>Oda Sayısı:</strong> 3 Yatak Odası + 1 Salon</li>
+                                    <li><strong>Özellikler:</strong> Premium salon alanı, geniş teras, merkezi klima sistemi, mermer zemin, lüks banyo tasarımı, fitness center erişimi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sections Wrapper -->
+    <div class="sections-wrapper">
+        <!-- Firma Tanıtım Section -->
+        <section class="company-intro" id="company-intro">
+        <div class="container">
+            <div class="intro-header">
+                <h2 class="intro-title">Firmalarımız</h2>
+                <p class="intro-subtitle">Güvenilir İnşaat ve Emlak Deneyimi</p>
+            </div>
+            
+            <div class="companies-grid">
+                <div class="company-card">
+                    <div class="company-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 21H21L20 9H4L3 21ZM9 3H15V7H9V3ZM5 9H19L19.5 11H4.5L5 9Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="company-name">MAU İnşaat</h3>
+                    <p class="company-description">
+                        20 yıllık deneyimi ile konut projelerinde öncü firma. Modern mimari, kaliteli malzeme ve müşteri memnuniyeti odaklı yaklaşımımızla İstanbul'da güvenilir konut projeleri hayata geçiriyoruz.
+                    </p>
+                    <div class="company-features">
+                        <span class="feature-tag">Modern Mimari</span>
+                        <span class="feature-tag">Kaliteli Malzeme</span>
+                        <span class="feature-tag">Güvenilir Teslimat</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="company-name">ERBA İnşaat</h3>
+                    <p class="company-description">
+                        Lüks konut projelerinde uzmanlaşmış, premium yaşam alanları tasarlayan firma. Yüksek standartlarda inşaat kalitesi ve müşteri odaklı hizmet anlayışı ile sektörde öncü konumda.
+                    </p>
+                    <div class="company-features">
+                        <span class="feature-tag">Lüks Tasarım</span>
+                        <span class="feature-tag">Premium Kalite</span>
+                        <span class="feature-tag">Özel Hizmet</span>
+                    </div>
+                </div>
+                
+                <div class="company-card">
+                    <div class="company-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 4L13.5 7.5C13.1 7.2 12.6 7 12 7S10.9 7.2 10.5 7.5L9 4L3 7V9L9 6.5L12 8L15 6.5L21 9ZM12 9.5C10.1 9.5 8.5 11.1 8.5 13S10.1 16.5 12 16.5S15.5 14.9 15.5 13S13.9 9.5 12 9.5Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="company-name">Emlak Gayrimenkul</h3>
+                    <p class="company-description">
+                        Profesyonel emlak danışmanlığı ve satış hizmetleri sunan, müşteri memnuniyetini ön planda tutan emlak ofisi. Güvenilir alım-satım süreçleri ve uzman kadrosu ile hizmet vermekteyiz.
+                    </p>
+                    <div class="company-features">
+                        <span class="feature-tag">Profesyonel Danışmanlık</span>
+                        <span class="feature-tag">Güvenilir Süreç</span>
+                        <span class="feature-tag">Uzman Kadro</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Harita Section -->
+    <section class="maps-section" id="maps-section">
+        <div class="container">
+            <div class="maps-header">
+                <h2 class="maps-title">Konum Bilgileri</h2>
+                <p class="maps-subtitle">Proje ve Satış Ofisi Adresleri</p>
+            </div>
+            
+            <div class="maps-grid">
+                <div class="map-card">
+                    <div class="map-header">
+                        <div class="map-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="map-title">Proje Konumu</h3>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=28.9744%2C41.0082%2C28.9844%2C41.0182&layer=mapnik&marker=41.0132%2C28.9794"
+                            width="100%" 
+                            height="300" 
+                            frameborder="0" 
+                            style="border: 0; border-radius: 12px;">
+                        </iframe>
+                    </div>
+                    
+                    <div class="address-info">
+                        <h4 class="address-title">Ata Center & Ata Deluxe Projesi</h4>
+                        <p class="address-text">
+                            <strong>Adres:</strong> Ataköy 7-8-9-10. Kısım Mahallesi, D-100 Karayolu Üzeri, Bakırköy/İstanbul<br>
+                            <strong>Bölge:</strong> Ataköy Marina ve Ataköy Towers yakını<br>
+                            <strong>Ulaşım:</strong> Metro, Metrobüs ve otobüs hatlarına yakın
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="map-card">
+                    <div class="map-header">
+                        <div class="map-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2ZM2 17L12 22L22 17M2 12L12 17L22 12" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="map-title">Satış Ofisi</h3>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe 
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=28.9744%2C41.0082%2C28.9844%2C41.0182&layer=mapnik&marker=41.0132%2C28.9794"
+                            width="100%" 
+                            height="300" 
+                            frameborder="0" 
+                            style="border: 0; border-radius: 12px;">
+                        </iframe>
+                    </div>
+                    
+                    <div class="address-info">
+                        <h4 class="address-title">Emlak Gayrimenkul Satış Ofisi</h4>
+                        <p class="address-text">
+                            <strong>Adres:</strong> Ataköy Towers AVM, Kat: 2, No: 201, Ataköy/İstanbul<br>
+                            <strong>Çalışma Saatleri:</strong> Pazartesi-Cumartesi 09:00-18:00<br>
+                            <strong>İletişim:</strong> +90 212 123 45 67 | info@emlakgayrimenkul.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">İletişim Bilgileri</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 16.92V19.92C22.0011 20.1985 21.9441 20.4742 21.8325 20.7293C21.7209 20.9844 21.5573 21.2136 21.3521 21.4019C21.1468 21.5901 20.9046 21.7335 20.6407 21.8227C20.3769 21.9119 20.0974 21.9451 19.82 21.92C16.7422 21.5856 13.787 20.5341 11.19 18.85C8.77382 17.3147 6.72533 15.2662 5.18999 12.85C3.49997 10.2412 2.44824 7.27099 2.11999 4.18C2.095 3.90347 2.12787 3.62476 2.21649 3.36162C2.30512 3.09849 2.44756 2.85669 2.63476 2.65162C2.82196 2.44655 3.0498 2.28271 3.30379 2.17052C3.55777 2.05833 3.83233 2.00026 4.10999 2H7.10999C7.59531 1.99522 8.06668 2.16708 8.43376 2.48353C8.80084 2.79999 9.03996 3.23945 9.10999 3.72C9.23662 4.68007 9.47144 5.62273 9.80999 6.53C9.94454 6.88792 9.97366 7.27691 9.8939 7.65088C9.81415 8.02485 9.62886 8.36811 9.35999 8.64L8.08999 9.91C9.51355 12.4135 11.5865 14.4864 14.09 15.91L15.36 14.64C15.6319 14.3711 15.9751 14.1858 16.3491 14.1061C16.7231 14.0263 17.1121 14.0555 17.47 14.19C18.3773 14.5286 19.3199 14.7634 20.28 14.89C20.7658 14.9596 21.2094 15.2032 21.5265 15.5775C21.8437 15.9518 22.0122 16.4296 21.9999 16.92H22Z" fill="currentColor"/>
+                            </svg>
+                            <span>+90 212 123 45 67</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4ZM20 6L12 11L4 6H20ZM20 18V8L12 13L4 8V18H20Z" fill="currentColor"/>
+                            </svg>
+                            <span>info@emlakgayrimenkul.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="currentColor"/>
+                            </svg>
+                            <span>Ataköy Towers AVM, Kat: 2, No: 201, Ataköy/İstanbul</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Projelerimiz</h3>
+                    <div class="project-links">
+                        <a href="#" onclick="scrollToProject('ata-center')" class="project-link">Ata Center</a>
+                        <a href="#" onclick="scrollToProject('ata-deluxe')" class="project-link">Ata Deluxe</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Firmalarımız</h3>
+                    <div class="company-links">
+                        <div class="company-link">
+                            <span class="company-name">MAU İnşaat</span>
+                            <span class="company-desc">20 yıllık deneyim</span>
+                        </div>
+                        <div class="company-link">
+                            <span class="company-name">ERBA İnşaat</span>
+                            <span class="company-desc">Lüks konut projeleri</span>
+                        </div>
+                        <div class="company-link">
+                            <span class="company-name">Emlak Gayrimenkul</span>
+                            <span class="company-desc">Profesyonel danışmanlık</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Sosyal Medya</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M24 4.557C23.117 4.949 22.168 5.213 21.172 5.332C22.189 4.723 22.97 3.758 23.337 2.608C22.386 3.172 21.332 3.582 20.21 3.803C19.313 2.846 18.032 2.248 16.616 2.248C13.437 2.248 11.101 5.214 11.819 8.293C7.728 8.088 4.1 6.128 1.671 3.149C0.381 5.362 1.002 8.257 3.194 9.723C2.388 9.697 1.626 9.476 0.956 9.107C0.911 11.388 2.546 13.522 4.914 13.997C4.221 14.185 3.462 14.229 2.69 14.081C3.316 16.037 5.134 17.46 7.29 17.5C5.22 19.123 2.612 19.848 0 19.54C2.179 20.937 4.768 21.752 7.548 21.752C16.69 21.752 21.855 14.031 21.543 6.964C22.505 6.411 23.34 5.544 24 4.557Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z" fill="currentColor"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987C.029 18.608 5.396 23.975 12.017 23.975C18.638 23.975 24.005 18.608 24.005 11.987C24.005 5.367 18.638.001 12.017.001ZM8.449 16.988C6.408 16.988 4.75 15.33 4.75 13.289C4.75 11.248 6.408 9.59 8.449 9.59C10.49 9.59 12.148 11.248 12.148 13.289C12.148 15.33 10.49 16.988 8.449 16.988ZM15.551 16.988C13.51 16.988 11.852 15.33 11.852 13.289C11.852 11.248 13.51 9.59 15.551 9.59C17.592 9.59 19.25 11.248 19.25 13.289C19.25 15.33 17.592 16.988 15.551 16.988Z" fill="currentColor"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Ata Center & Ata Deluxe. Tüm hakları saklıdır.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top-btn" onclick="scrollToTop()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 14L12 9L17 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
