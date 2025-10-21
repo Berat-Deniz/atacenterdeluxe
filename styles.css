@@ -1405,6 +1405,10 @@ html {
         font-size: 0.8rem;
     }
     
+    .project-header {
+        padding-left: 120px;
+    }
+    
     .model-container {
         padding: 15px;
     }
