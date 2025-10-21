@@ -200,20 +200,7 @@ function optimizeIframeForMobile(iframe) {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     if (isMobile) {
-        // Touch event'leri için optimizasyon
-        iframe.style.touchAction = 'manipulation';
-        iframe.style.webkitTouchCallout = 'none';
-        iframe.style.webkitUserSelect = 'none';
-        iframe.style.userSelect = 'none';
-        
-        // Hardware acceleration
-        iframe.style.webkitTransform = 'translateZ(0)';
-        iframe.style.transform = 'translateZ(0)';
-        
-        // Pointer events optimizasyonu
-        iframe.style.pointerEvents = 'auto';
-        
-        // Mobil cihazlarda iframe içeriğinin düzgün görüntülenmesi
+        // Sadece temel görüntüleme optimizasyonları
         iframe.style.width = '100%';
         iframe.style.height = '100%';
         iframe.style.border = 'none';
@@ -491,19 +478,11 @@ function setupMobileIframeOptimizations() {
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
     if (isMobile) {
-        // Viewport meta tag optimizasyonu
-        const viewport = document.querySelector('meta[name="viewport"]');
-        if (viewport) {
-            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
-        }
+        // Viewport meta tag optimizasyonu kaldırıldı
+        // Dokunmatik kontrollerin doğal çalışması için
         
-        // Touch event'leri için global optimizasyonlar
-        document.addEventListener('touchstart', function(e) {
-            // iframe içindeki touch event'leri için optimizasyon
-            if (e.target.closest('.matterport-embed-wrapper')) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+        // Touch event'leri için global optimizasyonlar kaldırıldı
+        // Dokunmatik kontrollerin doğal çalışması için
         
         // iframe yükleme sonrası ek optimizasyonlar
         const observer = new MutationObserver(function(mutations) {

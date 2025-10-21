@@ -538,26 +538,6 @@ body {
         width: 100% !important;
         height: 100% !important;
         border: none;
-        touch-action: manipulation;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    
-    /* Touch event'leri için optimizasyon */
-    .matterport-embed-wrapper {
-        touch-action: manipulation;
-        -webkit-overflow-scrolling: touch;
-    }
-    
-    /* Mobil cihazlarda iframe içeriğinin düzgün görüntülenmesi */
-    .matterport-embed-wrapper iframe {
-        pointer-events: auto;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
     }
 }
 
