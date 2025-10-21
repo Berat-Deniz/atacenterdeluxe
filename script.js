@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Scroll animasyonları için intersection observer
     setupScrollAnimations();
+    
+    // Intersection Observer'ı başlat
+    setupIntersectionObserver();
+    
+    // Görsel optimizasyonunu başlat
+    setupImageOptimization();
+    
+    // Mobil cihazlar için iframe optimizasyonlarını başlat
+    setupMobileIframeOptimizations();
 });
 
 // Proje detaylarına scroll et
@@ -165,6 +174,131 @@ let currentSlideIndex = {
     'ata-deluxe-3+1': 0
 };
 
+// Lazy loading için yüklenen embedleri takip et
+let loadedEmbeds = new Set();
+
+// Lazy loading fonksiyonu
+function loadEmbed(iframe) {
+    if (loadedEmbeds.has(iframe)) return;
+    
+    const dataSrc = iframe.getAttribute('data-src');
+    if (dataSrc) {
+        iframe.src = dataSrc;
+        loadedEmbeds.add(iframe);
+        console.log('Embed yüklendi:', iframe.title);
+        
+        // Mobil cihazlar için iframe yükleme sonrası optimizasyonlar
+        iframe.addEventListener('load', function() {
+            optimizeIframeForMobile(iframe);
+        });
+    }
+}
+
+// Mobil cihazlar için iframe optimizasyonu
+function optimizeIframeForMobile(iframe) {
+    // Mobil cihaz kontrolü
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Touch event'leri için optimizasyon
+        iframe.style.touchAction = 'manipulation';
+        iframe.style.webkitTouchCallout = 'none';
+        iframe.style.webkitUserSelect = 'none';
+        iframe.style.userSelect = 'none';
+        
+        // Hardware acceleration
+        iframe.style.webkitTransform = 'translateZ(0)';
+        iframe.style.transform = 'translateZ(0)';
+        
+        // Pointer events optimizasyonu
+        iframe.style.pointerEvents = 'auto';
+        
+        // Mobil cihazlarda iframe içeriğinin düzgün görüntülenmesi
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        
+        console.log('Mobil iframe optimizasyonu uygulandı:', iframe.title);
+    }
+}
+
+// Aktif slide'ın embedini yükle
+function loadActiveSlideEmbed(projectType) {
+    const carousel = document.getElementById(projectType + '-carousel');
+    if (!carousel) return;
+    
+    const activeSlide = carousel.querySelector('.carousel-slide.active');
+    if (activeSlide) {
+        const iframe = activeSlide.querySelector('iframe');
+        if (iframe) {
+            loadEmbed(iframe);
+        }
+    }
+}
+
+// Intersection Observer ile görünür alan optimizasyonu
+function setupIntersectionObserver() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target.querySelector('iframe');
+                if (iframe) {
+                    loadEmbed(iframe);
+                }
+                // Görünür hale geldikten sonra observer'ı kaldır
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Tüm carousel slide'larını gözlemle
+    const allSlides = document.querySelectorAll('.carousel-slide');
+    allSlides.forEach(slide => {
+        observer.observe(slide);
+    });
+}
+
+// Görsel lazy loading ve WebP desteği
+function setupImageOptimization() {
+    // WebP desteği kontrolü
+    const supportsWebP = () => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1;
+        canvas.height = 1;
+        return canvas.toDataURL('image/webp').indexOf('data:image/webp') === 0;
+    };
+
+    // Lazy loading için intersection observer
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                const dataSrc = img.getAttribute('data-src');
+                if (dataSrc) {
+                    // WebP desteği varsa WebP formatını kullan
+                    if (supportsWebP() && dataSrc.includes('.jpg')) {
+                        img.src = dataSrc.replace('.jpg', '.webp');
+                    } else {
+                        img.src = dataSrc;
+                    }
+                    img.removeAttribute('data-src');
+                }
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    // Tüm lazy loading görselleri gözlemle
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    lazyImages.forEach(img => imageObserver.observe(img));
+}
+
 // Daire seçimi işlevselliği
 let selectedApartment = {
     'ata-center': null,
@@ -196,6 +330,8 @@ function selectApartment(projectType, apartmentType) {
         content.style.display = 'block';
         setTimeout(() => {
             content.classList.add('show');
+            // İlk slide'ın embedini yükle
+            loadActiveSlideEmbed(projectType + '-' + apartmentType);
         }, 100);
     }
 }
@@ -265,6 +401,8 @@ function changeSlide(projectType, direction) {
     // Yeni slide'ı göster
     if (slides[currentSlideIndex[projectType]]) {
         slides[currentSlideIndex[projectType]].classList.add('active');
+        // Yeni aktif slide'ın embedini yükle
+        loadActiveSlideEmbed(projectType);
     }
     if (dots[currentSlideIndex[projectType]]) {
         dots[currentSlideIndex[projectType]].classList.add('active');
@@ -293,6 +431,8 @@ function currentSlide(projectType, slideNumber) {
     // Yeni slide'ı göster
     if (slides[currentSlideIndex[projectType]]) {
         slides[currentSlideIndex[projectType]].classList.add('active');
+        // Yeni aktif slide'ın embedini yükle
+        loadActiveSlideEmbed(projectType);
     }
     if (dots[currentSlideIndex[projectType]]) {
         dots[currentSlideIndex[projectType]].classList.add('active');
@@ -325,4 +465,70 @@ window.addEventListener('load', function() {
         heroContent.style.opacity = '1';
         heroContent.style.transform = 'translateY(0)';
     }, 300);
+    
+    // Service Worker'ı kaydet
+    registerServiceWorker();
 });
+
+// Service Worker kaydı
+function registerServiceWorker() {
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(registration => {
+                    console.log('Service Worker kaydedildi:', registration.scope);
+                })
+                .catch(error => {
+                    console.log('Service Worker kaydı başarısız:', error);
+                });
+        });
+    }
+}
+
+// Mobil cihazlar için iframe optimizasyonları
+function setupMobileIframeOptimizations() {
+    // Mobil cihaz kontrolü
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+        // Viewport meta tag optimizasyonu
+        const viewport = document.querySelector('meta[name="viewport"]');
+        if (viewport) {
+            viewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+        }
+        
+        // Touch event'leri için global optimizasyonlar
+        document.addEventListener('touchstart', function(e) {
+            // iframe içindeki touch event'leri için optimizasyon
+            if (e.target.closest('.matterport-embed-wrapper')) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // iframe yükleme sonrası ek optimizasyonlar
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    const iframes = mutation.target.querySelectorAll('iframe[data-src]');
+                    iframes.forEach(iframe => {
+                        iframe.addEventListener('load', function() {
+                            // Mobil cihazlarda iframe içeriğinin düzgün görüntülenmesi
+                            setTimeout(() => {
+                                iframe.style.opacity = '1';
+                                iframe.style.visibility = 'visible';
+                            }, 100);
+                        });
+                    });
+                }
+            });
+        });
+        
+        // Tüm iframe'leri gözlemle
+        const allIframes = document.querySelectorAll('.matterport-embed-wrapper');
+        allIframes.forEach(wrapper => {
+            observer.observe(wrapper, { childList: true, subtree: true });
+        });
+        
+        console.log('Mobil iframe optimizasyonları aktif');
+    }
+}

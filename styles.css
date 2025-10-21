@@ -10,7 +10,7 @@ body {
     line-height: 1.6;
     color: #ffffff;
     overflow-x: hidden;
-    background-image: url('ataprojeler.jpg');
+    background-image: url('ataprojeler.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -43,7 +43,7 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.7) 50%, rgba(26, 26, 26, 0.8) 100%);
-    background-image: url('ataprojeler.jpg');
+    background-image: url('ataprojeler.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -525,6 +525,40 @@ body {
     height: 100%;
     border: none;
     border-radius: 8px;
+}
+
+/* Mobil cihazlar için iframe optimizasyonları */
+@media (max-width: 768px) {
+    .matterport-embed-wrapper {
+        height: 300px;
+        border-radius: 8px;
+    }
+    
+    .matterport-embed-wrapper iframe {
+        width: 100% !important;
+        height: 100% !important;
+        border: none;
+        touch-action: manipulation;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    /* Touch event'leri için optimizasyon */
+    .matterport-embed-wrapper {
+        touch-action: manipulation;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Mobil cihazlarda iframe içeriğinin düzgün görüntülenmesi */
+    .matterport-embed-wrapper iframe {
+        pointer-events: auto;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
 }
 
 /* Carousel Dots */

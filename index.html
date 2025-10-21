@@ -7,7 +7,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Kritik kaynakları preload et -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="ataprojeler.webp" as="image">
+    
+    <!-- DNS prefetch için harici domainler -->
+    <link rel="dns-prefetch" href="//sketchfab.com">
+    <link rel="dns-prefetch" href="//my.matterport.com">
+    <link rel="dns-prefetch" href="//www.openstreetmap.org">
+    
+    <link rel="stylesheet" href="styles.min.css">
 </head>
 <body>
     <!-- Ana Hero Section -->
@@ -78,7 +89,7 @@
                                         <div class="model-container">
                                             <h4>Bina Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Center 2+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Center 2+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -87,7 +98,7 @@
                                         <div class="model-container">
                                             <h4>Daire İçi Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Center 2+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Center 2+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -96,7 +107,7 @@
                                         <div class="model-container">
                                             <h4>360° Sanal Tur</h4>
                                             <div class="matterport-embed-wrapper">
-                                                <iframe title="Ata Center 2+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://my.matterport.com/show/?m=mj12pMLKrTB"></iframe>
+                                                <iframe title="Ata Center 2+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking; camera; microphone" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://my.matterport.com/show/?m=mj12pMLKrTB&play=1&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -144,7 +155,7 @@
                                         <div class="model-container">
                                             <h4>Bina Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Center 3+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Center 3+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -153,7 +164,7 @@
                                         <div class="model-container">
                                             <h4>Daire İçi Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Center 3+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Center 3+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -162,7 +173,7 @@
                                         <div class="model-container">
                                             <h4>360° Sanal Tur</h4>
                                             <div class="matterport-embed-wrapper">
-                                                <iframe title="Ata Center 3+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://my.matterport.com/show/?m=mj12pMLKrTB"></iframe>
+                                                <iframe title="Ata Center 3+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking; camera; microphone" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://my.matterport.com/show/?m=mj12pMLKrTB&play=1&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -239,7 +250,7 @@
                                         <div class="model-container">
                                             <h4>Bina Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Deluxe 2+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Deluxe 2+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -248,7 +259,7 @@
                                         <div class="model-container">
                                             <h4>Daire İçi Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Deluxe 2+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Deluxe 2+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -257,7 +268,7 @@
                                         <div class="model-container">
                                             <h4>360° Sanal Tur</h4>
                                             <div class="matterport-embed-wrapper">
-                                                <iframe title="Ata Deluxe 2+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://my.matterport.com/show/?m=mj12pMLKrTB"></iframe>
+                                                <iframe title="Ata Deluxe 2+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking; camera; microphone" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://my.matterport.com/show/?m=mj12pMLKrTB&play=1&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -305,7 +316,7 @@
                                         <div class="model-container">
                                             <h4>Bina Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Deluxe 3+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Deluxe 3+1 Building" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/0545317292c44490af5408cb58633121/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -314,7 +325,7 @@
                                         <div class="model-container">
                                             <h4>Daire İçi Görünümü</h4>
                                             <div class="sketchfab-embed-wrapper">
-                                                <iframe title="Ata Deluxe 3+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
+                                                <iframe title="Ata Deluxe 3+1 Interior" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://sketchfab.com/models/2e85bf66e2dd4d48b683d6843e040a2b/embed?autostart=1"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -323,7 +334,7 @@
                                         <div class="model-container">
                                             <h4>360° Sanal Tur</h4>
                                             <div class="matterport-embed-wrapper">
-                                                <iframe title="Ata Deluxe 3+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://my.matterport.com/show/?m=mj12pMLKrTB"></iframe>
+                                                <iframe title="Ata Deluxe 3+1 Virtual Tour" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking; camera; microphone" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share data-src="https://my.matterport.com/show/?m=mj12pMLKrTB&play=1&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0&qs=1&brand=0&help=0&tourcta=0&wh=0&hr=0&vr=0&title=0" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation"></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -583,6 +594,13 @@
         </svg>
     </button>
 
-    <script src="script.js"></script>
+    <!-- Kritik olmayan modüller için lazy loading -->
+    <script>
+        // Carousel modülünü lazy load et
+        function loadCarouselModule() {
+            return import('./carousel.js');
+        }
+    </script>
+    <script src="script.min.js"></script>
 </body>
 </html>
