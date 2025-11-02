@@ -13,14 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll animasyonları için intersection observer
     setupScrollAnimations();
     
-    // Intersection Observer'ı başlat
-    setupIntersectionObserver();
-    
     // Görsel optimizasyonunu başlat
     setupImageOptimization();
-    
-    // Mobil cihazlar için iframe optimizasyonlarını başlat
-    setupMobileIframeOptimizations();
 });
 
 // Proje detaylarına scroll et
@@ -166,90 +160,7 @@ function setupScrollToTopButton() {
     });
 }
 
-// Carousel işlevselliği - 4 farklı kombinasyon için
-let currentSlideIndex = {
-    'ata-center-2+1': 0,
-    'ata-center-3+1': 0,
-    'ata-deluxe-2+1': 0,
-    'ata-deluxe-3+1': 0
-};
-
-// Lazy loading için yüklenen embedleri takip et
-let loadedEmbeds = new Set();
-
-// Lazy loading fonksiyonu
-function loadEmbed(iframe) {
-    if (loadedEmbeds.has(iframe)) return;
-    
-    const dataSrc = iframe.getAttribute('data-src');
-    if (dataSrc) {
-        iframe.src = dataSrc;
-        loadedEmbeds.add(iframe);
-        console.log('Embed yüklendi:', iframe.title);
-        
-        // Mobil cihazlar için iframe yükleme sonrası optimizasyonlar
-        iframe.addEventListener('load', function() {
-            optimizeIframeForMobile(iframe);
-        });
-    }
-}
-
-// Mobil cihazlar için iframe optimizasyonu
-function optimizeIframeForMobile(iframe) {
-    // Mobil cihaz kontrolü
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-        // Sadece temel görüntüleme optimizasyonları
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = 'none';
-        
-        console.log('Mobil iframe optimizasyonu uygulandı:', iframe.title);
-    }
-}
-
-// Aktif slide'ın embedini yükle
-function loadActiveSlideEmbed(projectType) {
-    const carousel = document.getElementById(projectType + '-carousel');
-    if (!carousel) return;
-    
-    const activeSlide = carousel.querySelector('.carousel-slide.active');
-    if (activeSlide) {
-        const iframe = activeSlide.querySelector('iframe');
-        if (iframe) {
-            loadEmbed(iframe);
-        }
-    }
-}
-
-// Intersection Observer ile görünür alan optimizasyonu
-function setupIntersectionObserver() {
-    const observerOptions = {
-        root: null,
-        rootMargin: '50px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const iframe = entry.target.querySelector('iframe');
-                if (iframe) {
-                    loadEmbed(iframe);
-                }
-                // Görünür hale geldikten sonra observer'ı kaldır
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Tüm carousel slide'larını gözlemle
-    const allSlides = document.querySelectorAll('.carousel-slide');
-    allSlides.forEach(slide => {
-        observer.observe(slide);
-    });
-}
+// Carousel ve iframe özellikleri kaldırıldı - artık gerekli değil
 
 // Görsel lazy loading ve WebP desteği
 function setupImageOptimization() {
@@ -286,145 +197,7 @@ function setupImageOptimization() {
     lazyImages.forEach(img => imageObserver.observe(img));
 }
 
-// Daire seçimi işlevselliği
-let selectedApartment = {
-    'ata-center': null,
-    'ata-deluxe': null
-};
-
-function selectApartment(projectType, apartmentType) {
-    console.log('selectApartment called:', projectType, apartmentType);
-    
-    // Seçilen daireyi kaydet
-    selectedApartment[projectType] = apartmentType;
-    
-    // Daire seçeneklerini gizle
-    const selection = document.getElementById(projectType + '-selection');
-    if (selection) {
-        selection.style.display = 'none';
-    }
-    
-    // Geri tuşunu göster
-    const backBtn = document.querySelector(`#${projectType}-details .back-to-selection-btn`);
-    if (backBtn) {
-        backBtn.classList.add('show');
-    }
-    
-    // İlgili içeriği göster
-    const contentId = projectType + '-' + apartmentType + '-content';
-    const content = document.getElementById(contentId);
-    if (content) {
-        content.style.display = 'block';
-        setTimeout(() => {
-            content.classList.add('show');
-            // İlk slide'ın embedini yükle
-            loadActiveSlideEmbed(projectType + '-' + apartmentType);
-        }, 100);
-    }
-}
-
-function backToSelection(projectType) {
-    console.log('backToSelection called:', projectType);
-    
-    // Daire seçeneklerini göster
-    const selection = document.getElementById(projectType + '-selection');
-    if (selection) {
-        selection.style.display = 'block';
-    }
-    
-    // Geri tuşunu gizle
-    const backBtn = document.querySelector(`#${projectType}-details .back-to-selection-btn`);
-    if (backBtn) {
-        backBtn.classList.remove('show');
-    }
-    
-    // Tüm içerikleri gizle
-    const allContents = document.querySelectorAll(`[id*="${projectType}-"][id*="-content"]`);
-    allContents.forEach(content => {
-        content.classList.remove('show');
-        setTimeout(() => {
-            content.style.display = 'none';
-        }, 300);
-    });
-}
-
-function changeSlide(projectType, direction) {
-    console.log('changeSlide called:', projectType, direction);
-    
-    const carousel = document.getElementById(projectType + '-carousel');
-    if (!carousel) {
-        console.log('Carousel not found:', projectType + '-carousel');
-        return;
-    }
-    
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    const carouselContainer = carousel.closest('.carousel-container');
-    const dots = carouselContainer.querySelectorAll('.dot');
-    
-    console.log('Found slides:', slides.length);
-    console.log('Found dots:', dots.length);
-    console.log('Current index:', currentSlideIndex[projectType]);
-    
-    // Mevcut slide'ı gizle
-    if (slides[currentSlideIndex[projectType]]) {
-        slides[currentSlideIndex[projectType]].classList.remove('active');
-    }
-    if (dots[currentSlideIndex[projectType]]) {
-        dots[currentSlideIndex[projectType]].classList.remove('active');
-    }
-    
-    // Yeni slide index'ini hesapla
-    currentSlideIndex[projectType] += direction;
-    
-    // Sınırları kontrol et
-    if (currentSlideIndex[projectType] >= slides.length) {
-        currentSlideIndex[projectType] = 0;
-    } else if (currentSlideIndex[projectType] < 0) {
-        currentSlideIndex[projectType] = slides.length - 1;
-    }
-    
-    console.log('New index:', currentSlideIndex[projectType]);
-    
-    // Yeni slide'ı göster
-    if (slides[currentSlideIndex[projectType]]) {
-        slides[currentSlideIndex[projectType]].classList.add('active');
-        // Yeni aktif slide'ın embedini yükle
-        loadActiveSlideEmbed(projectType);
-    }
-    if (dots[currentSlideIndex[projectType]]) {
-        dots[currentSlideIndex[projectType]].classList.add('active');
-    }
-}
-
-function currentSlide(projectType, slideNumber) {
-    const carousel = document.getElementById(projectType + '-carousel');
-    if (!carousel) return;
-    
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    const carouselContainer = carousel.closest('.carousel-container');
-    const dots = carouselContainer.querySelectorAll('.dot');
-    
-    // Mevcut slide'ı gizle
-    if (slides[currentSlideIndex[projectType]]) {
-        slides[currentSlideIndex[projectType]].classList.remove('active');
-    }
-    if (dots[currentSlideIndex[projectType]]) {
-        dots[currentSlideIndex[projectType]].classList.remove('active');
-    }
-    
-    // Yeni slide index'ini ayarla
-    currentSlideIndex[projectType] = slideNumber - 1;
-    
-    // Yeni slide'ı göster
-    if (slides[currentSlideIndex[projectType]]) {
-        slides[currentSlideIndex[projectType]].classList.add('active');
-        // Yeni aktif slide'ın embedini yükle
-        loadActiveSlideEmbed(projectType);
-    }
-    if (dots[currentSlideIndex[projectType]]) {
-        dots[currentSlideIndex[projectType]].classList.add('active');
-    }
-}
+// Carousel fonksiyonları kaldırıldı - artık gerekli değil
 
 // Proje butonlarına hover efekti
 document.addEventListener('DOMContentLoaded', function() {
@@ -472,42 +245,4 @@ function registerServiceWorker() {
     }
 }
 
-// Mobil cihazlar için iframe optimizasyonları
-function setupMobileIframeOptimizations() {
-    // Mobil cihaz kontrolü
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-        // Viewport meta tag optimizasyonu kaldırıldı
-        // Dokunmatik kontrollerin doğal çalışması için
-        
-        // Touch event'leri için global optimizasyonlar kaldırıldı
-        // Dokunmatik kontrollerin doğal çalışması için
-        
-        // iframe yükleme sonrası ek optimizasyonlar
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList') {
-                    const iframes = mutation.target.querySelectorAll('iframe[data-src]');
-                    iframes.forEach(iframe => {
-                        iframe.addEventListener('load', function() {
-                            // Mobil cihazlarda iframe içeriğinin düzgün görüntülenmesi
-                            setTimeout(() => {
-                                iframe.style.opacity = '1';
-                                iframe.style.visibility = 'visible';
-                            }, 100);
-                        });
-                    });
-                }
-            });
-        });
-        
-        // Tüm iframe'leri gözlemle
-        const allIframes = document.querySelectorAll('.matterport-embed-wrapper');
-        allIframes.forEach(wrapper => {
-            observer.observe(wrapper, { childList: true, subtree: true });
-        });
-        
-        console.log('Mobil iframe optimizasyonları aktif');
-    }
-}
+// Iframe optimizasyonları kaldırıldı - artık gerekli değil

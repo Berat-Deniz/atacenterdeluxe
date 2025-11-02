@@ -10,14 +10,32 @@ body {
     line-height: 1.6;
     color: #ffffff;
     overflow-x: hidden;
-    background-image: url('ataprojeler.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: #1a1a1a;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    position: relative;
+}
+
+/* Global Arka Plan */
+.global-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.global-background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
 }
 
 .container {
@@ -36,17 +54,40 @@ body {
     overflow: hidden;
 }
 
-.hero-background {
+/* Background slides artık global-background içinde */
+.background-slides {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(45, 45, 45, 0.7) 50%, rgba(26, 26, 26, 0.8) 100%);
-    background-image: url('ataprojeler.webp');
+    z-index: 0;
+}
+
+.background-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 0;
+    visibility: hidden;
+}
+
+.background-slide.active {
+    opacity: 1;
+    z-index: 1;
+    visibility: visible;
+}
+
+.hero-section {
+    position: relative;
+    z-index: 1;
 }
 
 .hero-overlay {
@@ -55,7 +96,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 100%);
+    z-index: 1;
 }
 
 .hero-content {
@@ -153,7 +195,7 @@ body {
 /* Proje Detayları */
 .project-details {
     min-height: 100vh;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 45, 45, 0.8) 50%, rgba(26, 26, 26, 0.9) 100%);
+    background: transparent;
     color: #ffffff;
     padding: 80px 0 0 0;
     opacity: 0;
@@ -677,7 +719,7 @@ html {
 
 /* Sections Wrapper */
 .sections-wrapper {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 45, 45, 0.8) 50%, rgba(26, 26, 26, 0.9) 100%);
+    background: transparent;
     position: relative;
     overflow: hidden;
 }
@@ -798,6 +840,8 @@ html {
     position: relative;
     z-index: 2;
     transition: all 0.3s ease;
+    padding: 0;
+    overflow: hidden;
 }
 
 .company-card:hover .company-icon {
@@ -805,10 +849,12 @@ html {
     box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
 }
 
-.company-icon svg {
-    color: white;
-    width: 40px;
-    height: 40px;
+.company-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
 }
 
 .company-name {
@@ -1065,7 +1111,7 @@ html {
 
 /* Footer */
 .site-footer {
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(45, 45, 45, 0.9) 50%, rgba(26, 26, 26, 0.95) 100%);
+    background: transparent;
     color: #ffffff;
     padding: 60px 0 20px 0;
     opacity: 0;
@@ -1171,18 +1217,20 @@ html {
 .company-link {
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 
-.company-name {
+.company-name-link {
     color: #ffffff;
     font-weight: 600;
     font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.company-desc {
-    color: #b0b0b0;
-    font-size: 0.85rem;
+.company-name-link:hover {
+    color: #007bff;
+    transform: translateX(5px);
 }
 
 .social-links {

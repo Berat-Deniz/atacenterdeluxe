@@ -1,7 +1,5 @@
 // Carousel modülü - Ayrı dosya olarak
 let currentSlideIndex = {
-    'ata-center-2+1': 0,
-    'ata-center-3+1': 0,
     'ata-deluxe-2+1': 0,
     'ata-deluxe-3+1': 0
 };

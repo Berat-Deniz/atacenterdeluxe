@@ -1,18 +1,18 @@
-# Ata Center & Ata Deluxe - İnşaat Projeleri Websitesi
+# Ata Deluxe - İnşaat Projeleri Websitesi
 
-Bu proje, Ata Center ve Ata Deluxe inşaat projeleri için geliştirilmiş modern bir statik websitesidir.
+Bu proje, Ata Deluxe inşaat projesi için geliştirilmiş modern bir statik websitesidir.
 
 ## 🏢 Proje Hakkında
 
 - **MAU İnşaat** ve **ERBA İnşaat** tarafından geliştirilen projeler
-- **Emlak Gayrimenkul** satış ofisi
+- **ERBA Gayrimenkul** satış ofisi
 - Modern ve profesyonel tasarım
 - Responsive (mobil uyumlu) yapı
 
 ## ✨ Özellikler
 
 ### 🎯 Ana Özellikler
-- **2 Proje**: Ata Center ve Ata Deluxe
+- **Proje**: Ata Deluxe
 - **Daire Seçenekleri**: 2+1 ve 3+1 daireler
 - **3D Modeller**: Sketchfab entegrasyonu
 - **Sanal Tur**: Matterport 360° tur
@@ -103,7 +103,7 @@ atacenterdeluxe/
 
 ## 📄 Lisans
 
-© 2024 Ata Center & Ata Deluxe. Tüm hakları saklıdır.
+© 2024 Ata Deluxe. Tüm hakları saklıdır.
 
 ## 📞 İletişim
 

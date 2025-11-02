@@ -1,5 +1,5 @@
 // Service Worker - Cache Stratejisi
-const CACHE_NAME = 'ata-center-v1.0.0';
+const CACHE_NAME = 'ata-deluxe-v1.0.0';
 const STATIC_CACHE = 'static-v1.0.0';
 const DYNAMIC_CACHE = 'dynamic-v1.0.0';
 
