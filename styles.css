@@ -123,6 +123,14 @@ body {
     line-height: 1.2;
 }
 
+.title-desktop {
+    display: inline;
+}
+
+.title-mobile {
+    display: none;
+}
+
 .subtitle {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.6rem;
@@ -1343,6 +1351,14 @@ html {
     .main-title {
         font-size: 2.5rem;
         letter-spacing: -0.01em;
+    }
+    
+    .title-desktop {
+        display: none;
+    }
+    
+    .title-mobile {
+        display: inline;
     }
     
     .subtitle {
