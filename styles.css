@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
     color: #ffffff;
     overflow-x: hidden;
@@ -74,7 +74,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 2.5s ease-in-out;
     z-index: 0;
     visibility: hidden;
 }
@@ -104,7 +104,7 @@ body {
     position: relative;
     z-index: 2;
     text-align: center;
-    max-width: 800px;
+    max-width: 950px;
     padding: 0 20px;
 }
 
@@ -113,27 +113,25 @@ body {
 }
 
 .main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    background: linear-gradient(45deg, #ffffff, #e0e0e0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     line-height: 1.2;
 }
 
 .subtitle {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 300;
-    opacity: 0.9;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    opacity: 0.95;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
     line-height: 1.5;
+    margin-bottom: 40px;
 }
 
 .project-buttons {
@@ -144,21 +142,21 @@ body {
 }
 
 .project-btn {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     background: none;
     border: none;
     color: #ffffff;
-    padding: 30px 60px;
-    font-size: 2.5rem;
+    padding: 35px 80px;
+    font-size: 2.8rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    min-width: 320px;
+    min-width: 360px;
     text-align: center;
     overflow: hidden;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     line-height: 1.2;
 }
 
@@ -222,12 +220,12 @@ body {
 }
 
 .project-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     line-height: 1.2;
 }
 
@@ -258,7 +256,7 @@ body {
 }
 
 .apartment-choice-btn {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     background: none;
     border: none;
     color: #ffffff;
@@ -418,7 +416,7 @@ body {
 }
 
 .carousel-header h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     color: #ffffff;
     font-size: 1.8rem;
     font-weight: 700;
@@ -503,7 +501,7 @@ body {
 
 .model-container h3,
 .model-container h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: #ffffff;
@@ -638,7 +636,7 @@ body {
 }
 
 .info-card h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
     color: #ffffff;
@@ -751,9 +749,9 @@ html {
 }
 
 .intro-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #ffffff;
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
@@ -776,10 +774,10 @@ html {
 }
 
 .intro-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.2rem;
     color: #e0e0e0;
-    font-weight: 400;
+    font-weight: 600;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     letter-spacing: 0.01em;
     line-height: 1.5;
@@ -849,6 +847,10 @@ html {
     box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
 }
 
+.erba-gayrimenkul-icon {
+    background: #000000 !important;
+}
+
 .company-logo {
     width: 100%;
     height: 100%;
@@ -868,8 +870,9 @@ html {
 }
 
 .company-description {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1rem;
+    font-weight: 500;
     color: #e0e0e0;
     line-height: 1.6;
     margin-bottom: 25px;
@@ -931,9 +934,9 @@ html {
 }
 
 .maps-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
     color: #ffffff;
     margin-bottom: 15px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
@@ -956,10 +959,10 @@ html {
 }
 
 .maps-subtitle {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.2rem;
+    font-weight: 600;
     color: #e0e0e0;
-    font-weight: 400;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     letter-spacing: 0.01em;
     line-height: 1.5;
@@ -1069,15 +1072,17 @@ html {
 
 .address-title {
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #ffffff;
     margin-bottom: 15px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.2), 2px 2px 4px rgba(0,0,0,0.8);
+    filter: brightness(1.2);
 }
 
 .address-text {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 0.95rem;
+    font-weight: 500;
     color: #e0e0e0;
     line-height: 1.6;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
@@ -1140,7 +1145,7 @@ html {
 }
 
 .footer-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: #ffffff;
@@ -1268,7 +1273,8 @@ html {
 }
 
 .footer-copyright {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 500;
     color: #b0b0b0;
     font-size: 0.9rem;
     text-align: center;

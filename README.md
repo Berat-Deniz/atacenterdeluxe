@@ -107,6 +107,6 @@ atacenterdeluxe/
 
 ## 📞 İletişim
 
-- **Telefon**: +90 212 123 45 67
-- **Email**: info@emlakgayrimenkul.com
-- **Adres**: Ataköy Towers AVM, Kat: 2, No: 201, Ataköy/İstanbul
+- **Telefon**: +90 551 711 58 28
+- **Email**: iletisim@atadeluxe.com
+- **Adres**: Ali Paşa Mahallesi, Merdivenli Sk. Özyeğen Apt No 2/4 Merkez, 43100 Kütahya Merkez/Kütahya
